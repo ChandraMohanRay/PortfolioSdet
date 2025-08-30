@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandra Mohan Ray - SDET</title>
+    <!-- Inter font from Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            perspective: 1000px; /* Required for 3D transforms */
+        }
+        /* Custom scrollbar to match the dark theme */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #555555;
+            border-radius: 20px;
+            border: 3px solid #111111;
+        }
+
+        .card-3d {
+            transition: transform 0.3s ease-out;
+            transform-style: preserve-3d;
+        }
+        .card-3d:hover {
+            transform: rotateY(5deg) rotateX(5deg) scale(1.02);
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 0;
+        }
+        
+        /* Glassmorphism effect for monochrome icons */
+        .glass-icon {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            color: #d1d5db; /* A light gray for icons */
+        }
+
+        .glass-icon:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .certification-card img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .certification-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 2px;
+        }
+
+        .header-content-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-[#111111] text-gray-200">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-[#2a2a2a] bg-opacity-90 backdrop-filter backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo/Name -->
+            <a href="#home" class="text-2xl font-bold text-gray-300 hover:text-white transition-colors nav-link">
+                Chandra Mohan Ray
+            </a>
+            <!-- Navigation Links -->
+            <ul class="flex space-x-6 text-lg font-medium">
+                <li><a href="#home" class="hover:text-white transition-colors nav-link">Home</a></li>
+                <li><a href="#about" class="hover:text-white transition-colors nav-link">About</a></li>
+                <li><a href="#skills" class="hover:text-white transition-colors nav-link">Skills</a></li>
+                <li><a href="#certifications" class="hover:text-white transition-colors nav-link">Certifications</a></li>
+                <li><a href="#portfolio" class="hover:text-white transition-colors nav-link">Experience</a></li>
+                <li><a href="https://chandu-obed.hashnode.dev/" target="_blank" class="hover:text-white transition-colors nav-link">Blog</a></li>
+                <li><a href="#contact" class="hover:text-white transition-colors nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section with Video Background -->
+    <header id="home" class="relative min-h-screen flex items-center justify-center p-6 text-center">
+        <!-- Video background with dark overlay -->
+        <video class="video-background" autoplay loop muted>
+            <source src="images/background2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+
+        <!-- Hero Content -->
+        <div id="hero-content" class="relative z-10 space-y-4 text-center p-8 bg-[#2a2a2a] rounded-lg shadow-lg max-w-2xl mx-auto header-content-container">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                Chandra Mohan Ray
+            </h1>
+            <h2 id="typing-text" class="text-lg sm:text-xl md:text-2xl text-gray-300 font-medium h-8 md:h-10"></h2>
+            <!-- Social Icons -->
+            <div class="flex justify-center space-x-6 text-2xl pt-4">
+                <a href="https://www.linkedin.com/in/cmray92/" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/chandramohanray" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center mt-6">
+                <a href="images/ChandraMohanRay_TestAutomation_Engineer.pdf" download="Chandramohan Ray- Quality Engineer.pdf" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors">
+                    <i class="fas fa-download mr-2"></i> Download Resume
+                </a>
+                <a href="mailto:cmray1701@gmail.com" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors">
+                    <i class="fas fa-envelope mr-2"></i> Get in Touch
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- About Me Section -->
+    <section id="about" class="min-h-screen flex items-center py-20 px-6 bg-[#1a1a1a]">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-300">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-12 space-y-8 md:space-y-0">
+                <!-- Image section with a rounded corner border -->
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <img src="images/profilepic.jpeg" alt="Chandra Mohan Ray" class="rounded-full shadow-lg border-4 border-gray-300 grayscale">
+                </div>
+                <!-- Bio and Resume section -->
+                <div class="w-full md:w-2/3 text-lg leading-relaxed space-y-6">
+                    <p class="text-gray-300">
+                        Hello! My name is Chandra Mohan Ray. I am an SDET with 4 years of experience in designing and implementing automated testing solutions for web and mobile applications. I specialize in Playwright, Selenium, and Appium, with strong programming expertise in Java, JavaScript, and TypeScript. My experience includes building and maintaining robust automation frameworks using TestNG, JUnit, and BDD (Cucumber).
+                    </p>
+                    <p class="text-gray-300">
+                        I have hands-on experience in end-to-end (E2E) automation testing, covering everything from frontend UI validation to database verification using Playwright for SQL and MongoDB. I also have a strong understanding of Agile and ITIL methodologies.
+                    </p>
+                    <p class="text-gray-300">
+                       I am a quick learner and a team player, passionate about working on challenging projects and exploring new technologies. My goal is to create robust and reliable systems that deliver an exceptional user experience.
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Skills Section -->
+    <section id="skills" class="min-h-screen flex items-center py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-300">My Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Automation Tools -->
+                <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d">
+                    <i class="fas fa-robot text-6xl text-gray-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold">Automation Tools</h3>
+                    <p class="mt-2 text-md text-gray-400">Selenium, Playwright, Appium</p>
+                </div>
+                <!-- Frameworks -->
+                <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d">
+                    <i class="fas fa-network-wired text-6xl text-gray-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold">Frameworks</h3>
+                    <p class="mt-2 text-md text-gray-400">TestNg, Junit, BDD</p>
+                </div>
+                <!-- Languages -->
+                <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d">
+                    <i class="fas fa-laptop-code text-6xl text-gray-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold">Languages</h3>
+                    <p class="mt-2 text-md text-gray-400">Java, JavaScript, TypeScript</p>
+                </div>
+                <!-- Project Management -->
+                <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d">
+                    <i class="fas fa-tasks text-6xl text-gray-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold">Project Management</h3>
+                    <p class="mt-2 text-md text-gray-400">Jira, GitLab, Jenkins, TestRail, Xray</p>
+                </div>
+                <!-- API Automation -->
+                <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d">
+                    <i class="fas fa-exchange-alt text-6xl text-gray-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold">API Automation</h3>
+                    <p class="mt-2 text-md text-gray-400">Postman, REST API, RestAssured, Playwright Default</p>
+                </div>
+                <!-- IDEs -->
+                <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d">
+                    <i class="fas fa-code-branch text-6xl text-gray-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold">IDEs</h3>
+                    <p class="mt-2 text-md text-gray-400">Vscode, Eclipse, Intelij</p>
+                </div>
+                <!-- DB Automation Testing -->
+                <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d">
+                    <i class="fas fa-database text-6xl text-gray-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold">DB Automation Testing</h3>
+                    <p class="mt-2 text-md text-gray-400">SQL, MongoDB, Database Testing</p>
+                </div>
+                <!-- Testing Domains -->
+                <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d">
+                    <i class="fas fa-vial text-6xl text-gray-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold">Testing Domains</h3>
+                    <p class="mt-2 text-md text-gray-400">Web & Mobile Automation, Regression Testing, Functional Testing, Unit Testing, UAT, Sanity Testing, Smoke Testing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <!-- Experience Section -->
+    <section id="portfolio" class="min-h-screen flex items-center py-20 px-6 bg-[#1a1a1a]">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-300">Experience</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Experience Card 1: Xoriant | Client: Frontdoor -->
+                <div class="bg-[#2a2a2a] rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 card-3d" data-project="xoriant">
+                    <img src="https://placehold.co/800x600/111111/dddddd?text=Xoriant+Frontdoor" alt="Xoriant Logo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-white">Test Engineer | Xoriant | Client: Frontdoor</h3>
+                        <div class="flex items-center flex-wrap space-x-2 my-2">
+                           <i class="fab fa-jira text-xl glass-icon" title="Jira"></i>
+                           <i class="fab fa-git-alt text-xl glass-icon" title="GitLab"></i>
+                           <i class="fas fa-vial text-xl glass-icon" title="TestRail"></i>
+                           <i class="fas fa-bug text-xl glass-icon" title="Xray"></i>
+                           <i class="fab fa-js-square text-xl glass-icon" title="JavaScript"></i>
+                           <i class="fas fa-code text-xl glass-icon" title="TypeScript"></i>
+                           <i class="fas fa-database text-xl glass-icon" title="SQL Developer"></i>
+                        </div>
+                        <p class="text-gray-400 mt-2">Developed and maintained end-to-end automation with Playwright and TypeScript.</p>
+                        <button class="learn-more-btn mt-4 inline-block text-gray-400 hover:text-white font-bold transition-colors">Learn More &rarr;</button>
+                    </div>
+                </div>
+                <!-- Experience Card 2: Infosys | Client: Telenet -->
+                <div class="bg-[#2a2a2a] rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 card-3d" data-project="infosys-telenet">
+                    <img src="https://placehold.co/800x600/111111/dddddd?text=Infosys+Telenet" alt="Infosys Telenet Logo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-white">Senior System Associate | Infosys | Client: Telenet</h3>
+                        <div class="flex items-center flex-wrap space-x-2 my-2">
+                            <i class="fas fa-robot text-xl glass-icon" title="Playwright"></i>
+                            <i class="fab fa-js-square text-xl glass-icon" title="JavaScript"></i>
+                            <i class="fab fa-jira text-xl glass-icon" title="Jira"></i>
+                            <i class="fab fa-git-alt text-xl glass-icon" title="GitLab"></i>
+                            <i class="fab fa-jenkins text-xl glass-icon" title="Jenkins"></i>
+                        </div>
+                        <p class="text-gray-400 mt-2">Developed automation scripts to create tools, resulting in a 50% reduction in implementation time.</p>
+                        <button class="learn-more-btn mt-4 inline-block text-gray-400 hover:text-white font-bold transition-colors">Learn More &rarr;</button>
+                    </div>
+                </div>
+                <!-- Experience Card 3: Infosys | Client: Proximus -->
+                <div class="bg-[#2a2a2a] rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 card-3d" data-project="infosys-proximus">
+                    <img src="https://placehold.co/800x600/111111/dddddd?text=Infosys+Proximus" alt="Infosys Proximus Logo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-white">Senior System Associate | Infosys | Client: Proximus</h3>
+                        <div class="flex items-center flex-wrap space-x-2 my-2">
+                           <i class="fas fa-robot text-xl glass-icon" title="Playwright"></i>
+                           <i class="fas fa-bug text-xl glass-icon" title="Appium"></i>
+                           <i class="fab fa-java text-xl glass-icon" title="Java"></i>
+                           <i class="fas fa-check-circle text-xl glass-icon" title="TestNG"></i>
+                        </div>
+                        <p class="text-gray-400 mt-2">Developed automation scripts using Playwright, Selenium, and Java, reducing time and labor costs by 80%.</p>
+                        <button class="learn-more-btn mt-4 inline-block text-gray-400 hover:text-white font-bold transition-colors">Learn More &rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   <!-- Certifications Section -->
+    <section id="certifications" class="min-h-screen flex items-center py-20 px-6 bg-[#1a1a1a]">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-300">Certifications</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d cursor-pointer certification-card" data-cert="selenium">
+                    <h3 class="text-2xl font-semibold text-white">SELENIUM</h3>
+                    <img src="Certificate/Selenium.png" alt="SDET Certification" class="w-full h-auto mt-4 rounded-lg">
+                </div>
+                <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d cursor-pointer certification-card" data-cert="java">
+                    <h3 class="text-2xl font-semibold text-white">Java SE8</h3>
+                    <img src="Certificate/Java Se8.png" alt="Java Certification" class="w-full h-auto mt-4 rounded-lg">
+                </div>
+                 <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d cursor-pointer certification-card" data-cert="api">
+                    <h3 class="text-2xl font-semibold text-white">API</h3>
+                    <img src="Certificate/api.png" alt="Api Testing" class="w-full h-auto mt-4 rounded-lg">
+                </div>
+                <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d cursor-pointer certification-card" data-cert="aws">
+                    <h3 class="text-2xl font-semibold text-white">AWS ASSOCIATE</h3>
+                    <img src="Certificate/AWS Associate.png" alt="AWS ASSOCIATE Certification" class="w-full h-auto mt-4 rounded-lg">
+                </div>
+                 <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d cursor-pointer certification-card" data-cert="devops">
+                    <h3 class="text-2xl font-semibold text-white">DEV-OPS</h3>
+                    <img src="Certificate/Devops.png" alt="DEV-OPS Certification" class="w-full h-auto mt-4 rounded-lg">
+                </div>
+                 <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d cursor-pointer certification-card" data-cert="cpq">
+                    <h3 class="text-2xl font-semibold text-white">CPQ DEVELOPER</h3>
+                    <img src="Certificate/CPQ Developer.png" alt="CPQ Certification" class="w-full h-auto mt-4 rounded-lg">
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Me Section -->
+    <section id="contact" class="min-h-screen flex items-center py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-300">Contact Me</h2>
+            <form action="send_email.php" method="post" enctype="multipart/form-data" class="max-w-3xl mx-auto bg-[#2a2a2a] p-8 md:p-12 rounded-lg shadow-lg card-3d">
+                <div class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-300 mb-2">Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full bg-[#333333] text-white border border-gray-600 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-300 mb-2">Email <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="youremail@example.com" required class="w-full bg-[#333333] text-white border border-gray-600 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-300 mb-2">Message <span class="text-red-500">*</span></label>
+                        <textarea id="message" name="message" rows="5" placeholder="Enter your message here" required minlength="30" class="w-full bg-[#333333] text-white border border-gray-600 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-gray-400"></textarea>
+                    </div>
+                    <div>
+                        <label for="attachment" class="block text-gray-300 mb-2">Attachment (Optional)</label>
+                        <input type="file" id="attachment" name="attachment" class="w-full text-white border-gray-600 rounded-md p-3">
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-12 rounded-full shadow-lg transition-colors">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#111111] text-gray-500 text-center py-6">
+        <p>&copy; 2024 Chandra Mohan Ray. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-[100] hidden">
+        <div class="bg-[#1a1a1a] p-8 rounded-lg shadow-xl max-w-2xl w-full mx-4 relative overflow-y-auto max-h-[90vh]">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl transition-colors">&times;</button>
+            <h3 id="modal-title" class="text-3xl font-bold text-white mb-4"></h3>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+    
+    <!-- Certification Modal -->
+    <div id="cert-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-[100] hidden">
+        <div class="bg-[#1a1a1a] p-4 rounded-lg shadow-xl max-w-4xl w-full mx-4 relative">
+            <button id="close-cert-modal-btn" class="absolute top-2 right-2 text-gray-400 hover:text-white text-3xl transition-colors">&times;</button>
+            <img id="cert-modal-image" src="" alt="Certification" class="w-full h-auto rounded-lg">
+        </div>
+    </div>
+
+    <!-- JavaScript for dynamic features -->
+    <script>
+        // The list of roles to be typed out
+        const roles = ["SDET (Software Development Engineer in Test)", "Automation Test Engineer", "Web and MobileAutomation Expert"];
+        let roleIndex = 0;
+        let charIndex = 0;
+        const typingTextElement = document.getElementById('typing-text');
+
+        // Function to handle the typing effect
+        function type() {
+            if (charIndex < roles[roleIndex].length) {
+                typingTextElement.textContent += roles[roleIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100);
+            } else {
+                setTimeout(erase, 1500);
+            }
+        }
+
+        // Function to handle the erasing effect
+        function erase() {
+            if (charIndex > 0) {
+                typingTextElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, 50);
+            } else {
+                roleIndex++;
+                if (roleIndex >= roles.length) {
+                    roleIndex = 0;
+                }
+                setTimeout(type, 500);
+            }
+        }
+
+        // Start the typing animation when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typingTextElement) {
+                setTimeout(type, 1500);
+            }
+        });
+
+        // Project data based on the resume
+        const projects = {
+            'xoriant': {
+                title: 'Test Engineer | Xoriant | Client: Frontdoor',
+                details: `
+                    <p class="text-white font-bold mt-4">Technologies:</p>
+                    <ul class="list-disc list-inside text-gray-300 ml-4 space-y-2">
+                        <li>Playwright, TypeScript, JavaScript, Allure, GitLab, LambdaTest, API, SQL</li>
+                    </ul>
+                    <p class="text-white font-bold mt-4">Description:</p>
+                    <p class="text-gray-300 ml-4">Frontdoor is a provider of home service plans. This project focused on developing and maintaining a robust test automation framework to ensure the quality of their web application.</p>
+                    <p class="text-white font-bold mt-4">Role/Responsibilities:</p>
+                    <ul class="list-disc list-inside text-gray-300 ml-4 space-y-2">
+                        <li>Developed and maintained end-to-end automation using the Playwright framework and TypeScript, increasing test efficiency by 60%.</li>
+                        <li>Implemented a Page Object Model pattern written in vanilla JavaScript for efficient test structure, reducing code duplication by 90%.</li>
+                        <li>Utilized Allure for test reporting, capturing comprehensive execution details, improving test traceability and debugging time by 100%.</li>
+                        <li>Automated pipeline execution using GitLab and integrated LambdaTest for test result analysis, streamlining CI/CD processes and improving deployment speed by 80%.</li>
+                        <li>Conducted API testing through Playwright and automated database testing by executing and validating queries via scripts, ensuring 95% test coverage.</li>
+                        <li>Validated UI elements against expected data extracted from JSON files using automation, reducing manual testing time by 50%.</li>
+                    </ul>
+                `,
+            },
+            'infosys-telenet': {
+                title: 'Senior System Associate | Infosys | Client: Telenet',
+                details: `
+                    <p class="text-white font-bold mt-4">Technologies:</p>
+                    <ul class="list-disc list-inside text-gray-300 ml-4 space-y-2">
+                        <li>Playwright, JavaScript, Jira, GitLab, Jenkins</li>
+                    </ul>
+                    <p class="text-white font-bold mt-4">Description:</p>
+                    <p class="text-gray-300 ml-4">This project involved creating automation tools to streamline processes within a telecommunication domain, specifically for Telenet.</p>
+                    <p class="text-white font-bold mt-4">Role/Responsibilities:</p>
+                    <ul class="list-disc list-inside text-gray-300 ml-4 space-y-2">
+                        <li>Developed automation scripts using Playwright and JavaScript to create tools, resulting in a 50% reduction in implementation time.</li>
+                        <li>Automated Collection Manager tasks and treatments, reducing manual intervention by 90% and increasing task completion efficiency by 80%.</li>
+                        <li>Implemented a process to bulk-create Jira tasks from Excel sheet data, resulting in a 90% reduction in workload and task creation time.</li>
+                        <li>Scripted ordering processes for new customer registration, order placement, and customer profile updates, reducing manual efforts by 60%.</li>
+                        <li>Executed test cases, accurately logged defects, and prioritized defects using Jira and GitLab for efficient code management.</li>
+                        <li>Analyzed automation feasibility for regression testing and developed progressive test plans.</li>
+                        <li>Deployed scripts to Jenkins via GitLab configuration for streamlined deployment.</li>
+                    </ul>
+                `,
+            },
+            'infosys-proximus': {
+                title: 'Senior System Associate | Infosys | Client: Proximus',
+                details: `
+                    <p class="text-white font-bold mt-4">Technologies:</p>
+                    <ul class="list-disc list-inside text-gray-300 ml-4 space-y-2">
+                        <li>Playwright, Selenium, Appium, Java, TestNG, Maven, JavaScript, Jira</li>
+                    </ul>
+                    <p class="text-white font-bold mt-4">Description:</p>
+                    <p class="text-gray-300 ml-4">This project focused on developing automation scripts for both web and mobile applications to reduce manual testing efforts within the telecommunication domain for Proximus.</p>
+                    <p class="text-white font-bold mt-4">Role/Responsibilities:</p>
+                    <ul class="list-disc list-inside text-gray-300 ml-4 space-y-2">
+                        <li>Developed automation scripts using Playwright, Selenium, and Java, resulting in an 80% reduction in time and labor costs.</li>
+                        <li>Executed comprehensive end-to-end and automation testing with Java Selenium and Playwright JavaScript, leveraging the TestNG Framework within a Maven Project Structure.</li>
+                        <li>Automated the Android app using Appium with Java automation, reducing manual effort by 60%. Automated activities included user login, new customer creation, and order submission.</li>
+                        <li>Collaborated closely with Developers and UI/Backend team to replicate and report bugs.</li>
+                        <li>Executed Test Cases, Logged Defects, Tracked Defects, and Prioritized Defects.</li>
+                        <li>Used JIRA for uploading test cases and managing defects.</li>
+                    </ul>
+                `,
+            }
+        };
+
+        const modal = document.getElementById('project-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalContent = document.getElementById('modal-content');
+        const closeBtn = document.getElementById('close-modal-btn');
+        
+        const certModal = document.getElementById('cert-modal');
+        const certImage = document.getElementById('cert-modal-image');
+        const certCloseBtn = document.getElementById('close-cert-modal-btn');
+        
+        const certifications = {
+            'selenium': 'Certificate/Selenium.png',
+            'java': 'Certificate/Java Se8.png',
+            'aws': 'Certificate/AWS Associate.png',
+            'devops':'Certificate/Devops.png',
+            'cpq': 'Certificate/CPQ Developer.png',
+            'api': 'Certificate/api.png'
+        };
+
+        document.addEventListener('click', (event) => {
+            // Handle project modal
+            if (event.target.closest('.card-3d[data-project]')) {
+                const projectId = event.target.closest('.card-3d[data-project]').dataset.project;
+                const project = projects[projectId];
+                if (project) {
+                    modalTitle.textContent = project.title;
+                    modalContent.innerHTML = project.details;
+                    modal.classList.remove('hidden');
+                }
+            }
+
+            // Handle certification modal
+            if (event.target.closest('.certification-card')) {
+                const certId = event.target.closest('.certification-card').dataset.cert;
+                const imageUrl = certifications[certId];
+                if (imageUrl) {
+                    certImage.src = imageUrl;
+                    certModal.classList.remove('hidden');
+                }
+            }
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        certCloseBtn.addEventListener('click', () => {
+            certModal.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
+```
