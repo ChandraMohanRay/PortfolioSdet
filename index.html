@@ -181,23 +181,20 @@
                 <!-- Bio and Resume section -->
                 <div class="w-full md:w-2/3 text-lg leading-relaxed space-y-6">
                     <p class="text-gray-300">
-                        Hello! My name is Chandra Mohan Ray. I am an SDET with 4 years of experience in designing and
-                        implementing automated testing solutions for web and mobile applications. I specialize in
-                        Playwright, Selenium, and Appium, with strong programming expertise in Java, JavaScript, and
-                        TypeScript. My experience includes building and maintaining robust automation frameworks using
-                        TestNG, JUnit, and BDD (Cucumber).
+I’m Chandra Mohan Ray, a Quality Engineer / SDET with 3.8 years of experience in software testing, test automation, and quality assurance. I specialize in building end-to-end automation solutions across web, mobile, and API platforms using Selenium, Playwright, Appium, Java, JavaScript, SQL, and MongoDB.
                     </p>
                     <p class="text-gray-300">
-                        I have hands-on experience in end-to-end (E2E) automation testing, covering everything from
-                        frontend UI validation to database verification using Playwright for SQL and MongoDB. I also
-                        have a strong understanding of Agile and ITIL methodologies.
+                       I actively leverage AI-powered tools like GitHub Copilot, Google Gemini, Anthropic Claude, and ChatGPT to write cleaner, more reliable automation scripts, reduce debugging time, and boost productivity. My expertise spans CI/CD pipeline automation, defect management, and Agile/ITIL practices, helping teams deliver faster, defect-free releases.
                     </p>
                     <p class="text-gray-300">
-                        I am a quick learner and a team player, passionate about working on challenging projects and
-                        exploring new technologies. My goal is to create robust and reliable systems that deliver an
-                        exceptional user experience.
-                        Contact Me
-                        </a>
+                        Passionate about problem-solving and continuous learning, I enjoy working on challenging projects, exploring emerging technologies, and creating robust systems that enhance user experience.
+                        </p>
+                        <!-- Centered Button -->
+    <div class="flex justify-center">
+        <a href="#contact"
+            class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors">
+            Contact Me
+        </a>
                 </div>
             </div>
         </div>
@@ -208,6 +205,12 @@
         <div class="container mx-auto">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-300">My Skills</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <!-- AI Skills -->
+                <div class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d">
+                    <i class="fas fa-brain text-6xl text-gray-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold">AI Tools</h3>
+                    <p class="mt-2 text-md text-gray-400">GitHub Copilot, Gemini, Claude, GPT-5, DeepSeek</p>
+                </div>
                 <!-- Automation Tools -->
                 <div
                     class="bg-[#2a2a2a] p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 card-3d">
@@ -388,11 +391,11 @@
         </div>
     </section>
     <!-- Contact Me Section -->
+    Contact Me Section -->
     <section id="contact" class="min-h-screen flex items-center py-20 px-6">
         <div class="container mx-auto">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-300">Contact Me</h2>
-            <form action="send_email.php" method="post" enctype="multipart/form-data"
-                class="max-w-3xl mx-auto bg-[#2a2a2a] p-8 md:p-12 rounded-lg shadow-lg card-3d">
+            <form name="contact" method="post" data-netlify="true" enctype="multipart/form-data" class="max-w-3xl mx-auto bg-[#2a2a2a] p-8 md:p-12 rounded-lg shadow-lg card-3d">
                 <div class="space-y-6">
                     <div>
                         <label for="name" class="block text-gray-300 mb-2">Name <span
@@ -425,7 +428,6 @@
                         </button>
                     </div>
             </form>
-        </div>
         </div>
     </section>
 
