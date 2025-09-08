@@ -639,45 +639,46 @@ and maintaining high product quality.</li>
         certCloseBtn.addEventListener('click', () => {
             certModal.classList.add('hidden');
         });
-        // Get form elements
+     // Get form elements
 const contactForm = document.querySelector('form[name="contact"]');
 const successModal = document.getElementById('success-modal');
 const closeSuccessBtn = document.getElementById('close-success-modal-btn');
 
-contactForm.addEventListener('submit', async (event) => {
-    // Prevent the default form submission that causes a page reload
+contactForm.addEventListener('submit', event => {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
+    const myForm = event.target;
+    const formData = new FormData(myForm);
 
-    try {
-        const response = await fetch(contactForm.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json',
-            },
-        });
-
+    // The fetch URL is changed from contactForm.action to "/"
+    fetch("/", {
+        method: "POST",
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        },
+    })
+    .then(response => {
         if (response.ok) {
-            // Show the success modal
             successModal.classList.remove('hidden');
-            contactForm.reset(); // Clear the form fields
+            myForm.reset();
         } else {
-            // Handle error, e.g., show an alert or error message
-            console.error('Form submission failed.');
-            alert('Oops! Something went wrong. Please try again.');
+            // Trigger the .catch() block if the response is not OK
+            throw new Error('Form submission failed.');
         }
-    } catch (error) {
-        console.error('Error submitting the form:', error);
-        alert('An error occurred. Please check your network connection and try again.');
-    }
+    })
+    .catch(error => {
+        console.error(error);
+        alert('Oops! Something went wrong. Please try again.');
+    });
 });
 
 // Close the success modal
 closeSuccessBtn.addEventListener('click', () => {
     successModal.classList.add('hidden');
-});
+});   
+
+
     </script>
 </body>
 
