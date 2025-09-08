@@ -108,7 +108,7 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Logo/Name -->
             <a href="#home" class="text-2xl font-bold text-gray-300 hover:text-white transition-colors nav-link">
-                Chandra Mohan Ray iii
+                Chandra Mohan Ray
             </a>
             <!-- Navigation Links -->
             <ul class="flex space-x-6 text-lg font-medium">
@@ -402,46 +402,44 @@
     </section>
     <!-- Contact Me Section -->
     <section id="contact" class="min-h-screen flex items-center py-20 px-6">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 text-gray-300">Contact Me</h2>
-            <form name="contact" class="..."/>
-                class="max-w-3xl mx-auto bg-[#2a2a2a] p-8 md:p-12 rounded-lg shadow-lg card-3d">
-                <input type="hidden" name="form-name" value="contact" />
-                <div class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-gray-300 mb-2">Name <span
-                                class="text-red-500">*</span></label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required
-                            class="w-full bg-[#333333] text-white border border-gray-600 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-gray-400">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-gray-300 mb-2">Email <span
-                                class="text-red-500">*</span></label>
-                        <input type="email" id="email" name="email" placeholder="youremail@example.com" required
-                            class="w-full bg-[#333333] text-white border border-gray-600 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-gray-400">
-                    </div>
-                    <div>
-                        <label for="message" class="block text-gray-300 mb-2">Message <span
-                                class="text-red-500">*</span></label>
-                        <textarea id="message" name="message" rows="5" placeholder="Enter your message here" required
-                            minlength="30"
-                            class="w-full bg-[#333333] text-white border border-gray-600 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-gray-400"></textarea>
-                    </div>
-                    <div>
-                        <label for="attachment" class="block text-gray-300 mb-2">Attachment (Optional)</label>
-                        <input type="file" id="attachment" name="attachment"
-                            class="w-full text-white border-gray-600 rounded-md p-3">
-                    </div>
-                    <div class="flex justify-center">
-                        <button type="submit"
-                            class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-12 rounded-full shadow-lg transition-colors">
-                            Send Message
-                        </button>
-                    </div>
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-300">Contact Me</h2>
+        
+        <form name="contact" class="max-w-3xl mx-auto bg-[#2a2a2a] p-8 md:p-12 rounded-lg shadow-lg card-3d">
+            
+            <input type="hidden" name="form-name" value="contact" />
+
+            <div class="space-y-6">
+                <div>
+                    <label for="name" class="block text-gray-300 mb-2">Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required
+                        class="w-full bg-[#333333] text-white border border-gray-600 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-gray-400">
                 </div>
-            </form>
-        </div>
-    </section>
+                <div>
+                    <label for="email" class="block text-gray-300 mb-2">Email <span class="text-red-500">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="youremail@example.com" required
+                        class="w-full bg-[#333333] text-white border border-gray-600 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                </div>
+                <div>
+                    <label for="message" class="block text-gray-300 mb-2">Message <span class="text-red-500">*</span></label>
+                    <textarea id="message" name="message" rows="5" placeholder="Enter your message here"
+                        class="w-full bg-[#333333] text-white border border-gray-600 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-gray-400"></textarea>
+                </div>
+                <div>
+                    <label for="attachment" class="block text-gray-300 mb-2">Attachment (Optional)</label>
+                    <input type="file" id="attachment" name="attachment"
+                        class="w-full text-white border-gray-600 rounded-md p-3">
+                </div>
+                <div class="flex justify-center">
+                    <button type="submit"
+                        class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-12 rounded-full shadow-lg transition-colors">
+                        Send Message
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
     <!-- <section>
         <form name="contact" netlify>
   <p>
